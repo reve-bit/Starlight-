@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starlight+ | Community</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+        <a href="index.html">Starlight+</a>
+    </div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stages.html">Stages</a></li>
+        <li><a href="community.html" class="active">Community</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-overlay"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero-community">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Community</h1>
+      <p>Interact, vote, and join the fandom excitement!</p>
+      <a href="#community-content" class="cta-btn">Join Now</a>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- Fan Interaction -->
+    <section class="section" id="community-content">
+      <h2 class="section-title">Fan Interaction</h2>
+      <div class="card-grid">
+        <div class="card">
+          <img src="Images/ConstellationPicks.jpg" alt="Constellation Picks">
+          <h3 class="card-title">Constellation Picks</h3>
+          <p>Vote for your favorite stars and performances every week.</p>
+        </div>
+        <div class="card">
+          <img src="Images/FanForum.jpg" alt="Fan Forum">
+          <h3 class="card-title">Fan Forum</h3>
+          <p>Discuss, share theories, and celebrate the fandom with fellow fans.</p>
+        </div>
+        <div class="card">
+          <img src="Images/Creation.jpg" alt="Fan Art & Creations">
+          <h3 class="card-title">Fan Creations</h3>
+          <p>Showcase your artwork, edits, and other creative contributions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trending Fan Votes -->
+    <section class="section">
+      <h2 class="section-title">Trending Votes</h2>
+      <div class="slider-container">
+        <button class="slider-btn prev">&#10094;</button>
+        <div class="slider-wrapper">
+          <div class="card">
+            <img src="Images/Nova.jpg" alt="Star A">
+            <h3 class="card-title">Star A</h3>
+            <p>Votes: 12,450</p>
+          </div>
+          <div class="card">
+            <img src="Images/Orion.jpg" alt="Star B">
+            <h3 class="card-title">Star B</h3>
+            <p>Votes: 10,870</p>
+          </div>
+          <div class="card">
+            <img src="Images/TAurora.jpg" alt="Star C">
+            <h3 class="card-title">Star C</h3>
+            <p>Votes: 9,320</p>
+          </div>
+          <div class="card">
+            <img src="Images/Meteor.jpg" alt="Star D">
+            <h3 class="card-title">Star D</h3>
+            <p>Votes: 8,740</p>
+          </div>
+        </div>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Fan Creations Slider -->
+    <section class="section">
+      <h2 class="section-title">Featured Fan Creations</h2>
+      <div class="slider-container">
+        <button class="slider-btn prev">&#10094;</button>
+        <div class="slider-wrapper">
+          <div class="card">
+            <img src="Images/Drama.jpg" alt="Fan Art 1">
+            <h3 class="card-title">Drama Art</h3>
+            <p>By Naluisa</p>
+          </div>
+          <div class="card">
+            <img src="Images/Creation.jpg" alt="Fan Art 2">
+            <h3 class="card-title">Like Jennie Dance Cover</h3>
+            <p>By B.T.B Official</p>
+          </div>
+          <div class="card">
+            <img src="Images/Only.jpg" alt="Fan Art 3">
+            <h3 class="card-title">Only By Lee Hi Cover</h3>
+            <p>By Faith CNS</p>
+          </div>
+          <div class="card">
+            <img src="Images/Parody.jpg" alt="Fan Art 4">
+            <h3 class="card-title">Stray Kids' My Pace Parody</h3>
+            <p>By LankyBox</p>
+          </div>
+        </div>
+        <button class="slider-btn next">&#10095;</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Starlight+. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const overlay = document.querySelector('.nav-overlay');
+    overlay.addEventListener('click', () => menuToggle.checked = false);
+
+    // Slider functionality
+    document.querySelectorAll('.slider-container').forEach(container => {
+      const wrapper = container.querySelector('.slider-wrapper');
+      const prevBtn = container.querySelector('.slider-btn.prev');
+      const nextBtn = container.querySelector('.slider-btn.next');
+      const scrollAmount = 260; // card width + gap
+
+      prevBtn.addEventListener('click', () => {
+        wrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+      nextBtn.addEventListener('click', () => {
+        wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
