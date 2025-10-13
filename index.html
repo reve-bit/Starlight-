@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Starlight+ | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- Header -->
@@ -13,8 +13,10 @@
     <div class="logo">
       <a href="index.html">Starlight+</a>
     </div>
+
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+    <label for="menu-toggle" class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></label>
+
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -24,35 +26,33 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <div class="nav-overlay"></div>
+
+    <div class="nav-overlay" data-close></div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero-home">
-    <div class="hero-overlay"></div>
+  <!-- HERO -->
+  <section class="hero hero-home" aria-label="Hero">
+    <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="Images/Stages.jpg" aria-hidden="true">
+      <source src="media/starlight_promo.mp4" type="video/mp4">
+      <source src="media/starlight_promo.webm" type="video/webm">
+      <!-- fallback -->
+    </video>
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- decorative stars layers -->
+    <div class="stars stars-1" aria-hidden="true"></div>
+    <div class="stars stars-2" aria-hidden="true"></div>
+    <div class="stars stars-3" aria-hidden="true"></div>
+
     <div class="hero-content">
       <h1>One Universe, Infinite Starlights</h1>
       <p>Your cosmic hub for fandom, talent, and interactive entertainment.</p>
       <a href="#highlights" class="cta-btn">Join the Stage!</a>
     </div>
-
-    <!-- Welcome Video (Stage 9 Integration) -->
-    <div class="welcome-video">
-      <video controls poster="Images/Stages.jpg" width="100%">
-        <source src="media/starlight_promo.mp4" type="video/mp4">
-        <source src="media/starlight_promo.webm" type="video/webm">
-
-        <!-- Captions -->
-        <track src="media/captions.vtt" kind="captions" srclang="en" label="English Captions" default>
-        <!-- Audio Descriptions -->
-        <track src="media/descriptions.vtt" kind="descriptions" srclang="en" label="English Descriptions">
-
-        Your browser does not support the video tag. Please update to a modern browser to view this content.
-      </video>
-    </div>
   </section>
 
-  <!-- Highlights -->
+  <!-- MAIN CONTENT -->
   <main class="container">
     <section class="section" id="highlights">
       <h2 class="section-title">Highlights</h2>
@@ -75,12 +75,11 @@
       </div>
     </section>
 
-    <!-- Latest Updates -->
+    <!-- Latest Updates (slider) -->
     <section class="section">
       <h2 class="section-title">Latest Updates</h2>
       <div class="slider-container">
-        <button class="slider-btn prev">&#10094;</button>
-
+        <button class="slider-btn prev" aria-label="Previous">&#10094;</button>
         <div class="slider-wrapper">
           <div class="card">
             <img src="Images/Live.jpg" alt="Galaxy Beats Concert">
@@ -108,8 +107,7 @@
             <p>Limited edition cosmic fan merch available now. Don’t miss out!</p>
           </div>
         </div>
-
-        <button class="slider-btn next">&#10095;</button>
+        <button class="slider-btn next" aria-label="Next">&#10095;</button>
       </div>
     </section>
 
@@ -138,29 +136,48 @@
     <p>© 2025 Starlight+. All Rights Reserved.</p>
   </footer>
 
-  <!-- Navigation Script -->
+  <!-- Inline script: nav & slider & fallback centering -->
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const overlay = document.querySelector('.nav-overlay');
-    overlay.addEventListener('click', () => menuToggle.checked = false);
-  </script>
-
-  <!-- Slider Script -->
-  <script>
-    const slider = document.querySelector('.slider-wrapper');
-    const prevBtn = document.querySelector('.slider-btn.prev');
-    const nextBtn = document.querySelector('.slider-btn.next');
-    const card = document.querySelector('.slider-wrapper .card');
-    const cardWidth = card.offsetWidth + 20; // card + gap
-
-    nextBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    // mobile nav overlay
+    document.querySelectorAll('.nav-overlay, [data-close]').forEach(el=>{
+      el.addEventListener('click', ()=> {
+        const cb = document.getElementById('menu-toggle');
+        if(cb) cb.checked = false;
+      });
     });
 
-    prevBtn.addEventListener('click', () => {
-      slider.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-    });
-  </script>
+    // slider
+    (function(){
+      const slider = document.querySelector('.slider-wrapper');
+      if(!slider) return;
+      const prev = document.querySelector('.slider-btn.prev');
+      const next = document.querySelector('.slider-btn.next');
+      const card = slider.querySelector('.card');
+      function cw(){ return card ? (card.offsetWidth + 20) : 260; }
+      next && next.addEventListener('click', ()=> slider.scrollBy({ left: cw(), behavior: 'smooth'}));
+      prev && prev.addEventListener('click', ()=> slider.scrollBy({ left: -cw(), behavior: 'smooth'}));
+    })();
 
+    // Fallback: ensure hero-content centered if CSS blocked
+    (function(){
+      const hc = document.querySelector('.hero-content');
+      const hero = document.querySelector('.hero');
+      if(!hc || !hero) return;
+      function ensureCenter(){
+        const st = getComputedStyle(hc);
+        if(st.position !== 'absolute' && st.position !== 'fixed'){
+          hc.style.position = 'absolute';
+          hc.style.top = '50%';
+          hc.style.left = '50%';
+          hc.style.transform = 'translate(-50%,-50%)';
+          hc.style.zIndex = '1002';
+          hc.style.textAlign = 'center';
+        }
+      }
+      window.addEventListener('load', ensureCenter);
+      window.addEventListener('resize', ensureCenter);
+      ensureCenter();
+    })();
+  </script>
 </body>
 </html>
