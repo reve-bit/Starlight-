@@ -3,7 +3,7 @@
   --lilac: #C9A7EB;
   --violet: #6A00F4;
   --bg: #000;
-  --surface: #0f0f12;
+  --surface: hsl(240, 9%, 6%);
   --muted: #bfbfbf;
   --card: #0b0b0d;
   --radius: 1.2rem;
@@ -570,4 +570,23 @@ footer {
 
 .contact-info a:hover {
   color: var(--lilac);
+}
+/* ---------- Fullscreen Background Video ---------- */
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Dark overlay for readability */
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
 }
