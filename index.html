@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Starlight+ | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 <body>
   <!-- Header -->
@@ -32,19 +32,11 @@
 
   <!-- HERO -->
   <section class="hero hero-home" aria-label="Hero">
-    <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="Images/Stages.jpg" aria-hidden="true">
+    <video class="video-bg" autoplay muted loop playsinline preload="metadata" poster="Images/Stages.jpg" aria-hidden="true">
       <source src="media/starlight_promo.mp4" type="video/mp4">
       <source src="media/starlight_promo.webm" type="video/webm">
-      <!-- fallback -->
     </video>
-
     <div class="hero-overlay" aria-hidden="true"></div>
-
-    <!-- decorative stars layers -->
-    <div class="stars stars-1" aria-hidden="true"></div>
-    <div class="stars stars-2" aria-hidden="true"></div>
-    <div class="stars stars-3" aria-hidden="true"></div>
-
     <div class="hero-content">
       <h1>One Universe, Infinite Starlights</h1>
       <p>Your cosmic hub for fandom, talent, and interactive entertainment.</p>
@@ -56,6 +48,10 @@
   <main class="container">
     <section class="section" id="highlights">
       <h2 class="section-title">Highlights</h2>
+      <video class="intro-video" autoplay loop playsinline preload="metadata" poster="Images/Stages.jpg" controls>
+        <source src="media/intro.mp4" type="video/mp4">
+      </video>
+    
       <div class="card-grid">
         <div class="card">
           <img src="Images/MAMA_logo.webp" alt="Exclusive Updates">
@@ -115,18 +111,24 @@
     <section class="section">
       <h2 class="section-title">Quick Links</h2>
       <div class="card-grid">
-        <div class="card">
-          <img src="Images/Stages.jpg" alt="Stages Section">
-          <a href="stages.html">Stages</a>
-        </div>
-        <div class="card">
-          <img src="Images/community.jpg" alt="Community Section">
-          <a href="community.html">Community</a>
-        </div>
-        <div class="card">
-          <img src="Images/About.jpg" alt="About Us Section">
-          <a href="about.html">About Us</a>
-        </div>
+        <a href="stages.html" class="card-link">
+          <div class="card">
+            <img src="Images/Stages.jpg" alt="Stages Section">
+            <h3>Stages</h3>
+          </div>
+        </a>
+        <a href="community.html" class="card-link">
+          <div class="card">
+            <img src="Images/community.jpg" alt="Community Section">
+            <h3>Community</h3>
+          </div>
+        </a>
+        <a href="about.html" class="card-link">
+          <div class="card">
+            <img src="Images/About.jpg" alt="About Us Section">
+            <h3>About Us</h3>
+          </div>
+        </a>
       </div>
     </section>
   </main>
@@ -135,49 +137,6 @@
   <footer>
     <p>© 2025 Starlight+. All Rights Reserved.</p>
   </footer>
-
-  <!-- Inline script: nav & slider & fallback centering -->
-  <script>
-    // mobile nav overlay
-    document.querySelectorAll('.nav-overlay, [data-close]').forEach(el=>{
-      el.addEventListener('click', ()=> {
-        const cb = document.getElementById('menu-toggle');
-        if(cb) cb.checked = false;
-      });
-    });
-
-    // slider
-    (function(){
-      const slider = document.querySelector('.slider-wrapper');
-      if(!slider) return;
-      const prev = document.querySelector('.slider-btn.prev');
-      const next = document.querySelector('.slider-btn.next');
-      const card = slider.querySelector('.card');
-      function cw(){ return card ? (card.offsetWidth + 20) : 260; }
-      next && next.addEventListener('click', ()=> slider.scrollBy({ left: cw(), behavior: 'smooth'}));
-      prev && prev.addEventListener('click', ()=> slider.scrollBy({ left: -cw(), behavior: 'smooth'}));
-    })();
-
-    // Fallback: ensure hero-content centered if CSS blocked
-    (function(){
-      const hc = document.querySelector('.hero-content');
-      const hero = document.querySelector('.hero');
-      if(!hc || !hero) return;
-      function ensureCenter(){
-        const st = getComputedStyle(hc);
-        if(st.position !== 'absolute' && st.position !== 'fixed'){
-          hc.style.position = 'absolute';
-          hc.style.top = '50%';
-          hc.style.left = '50%';
-          hc.style.transform = 'translate(-50%,-50%)';
-          hc.style.zIndex = '1002';
-          hc.style.textAlign = 'center';
-        }
-      }
-      window.addEventListener('load', ensureCenter);
-      window.addEventListener('resize', ensureCenter);
-      ensureCenter();
-    })();
-  </script>
+  <script src="Scripts/script.js"></script>
 </body>
 </html>
