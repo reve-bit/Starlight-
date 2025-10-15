@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Starlight+ | Community</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
   <!-- Header -->
@@ -28,15 +28,19 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero hero-community">
-    <div class="hero-overlay"></div>
+    
+  <section class="hero hero-community" aria-label="Hero">
+    <video class="video-bg" autoplay muted loop playsinline preload="metadata" poster="Images/Stages.jpg" aria-hidden="true">
+      <source src="media/starlight_promo.mp4" type="video/mp4">
+      <source src="media/starlight_promo.webm" type="video/webm">
+    </video>
+
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <h1>Community</h1>
       <p>Interact, vote, and join the fandom excitement!</p>
       <a href="#community-content" class="cta-btn">Join Now</a>
-    </div>
   </section>
-
   <main class="container">
     <!-- Fan Interaction -->
     <section class="section" id="community-content">
@@ -127,27 +131,6 @@
     <p>© 2025 Starlight+. All Rights Reserved.</p>
   </footer>
 
-  <script>
-    // Mobile menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const overlay = document.querySelector('.nav-overlay');
-    overlay.addEventListener('click', () => menuToggle.checked = false);
-
-    // Slider functionality
-    document.querySelectorAll('.slider-container').forEach(container => {
-      const wrapper = container.querySelector('.slider-wrapper');
-      const prevBtn = container.querySelector('.slider-btn.prev');
-      const nextBtn = container.querySelector('.slider-btn.next');
-      const scrollAmount = 260; // card width + gap
-
-      prevBtn.addEventListener('click', () => {
-        wrapper.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      });
-      nextBtn.addEventListener('click', () => {
-        wrapper.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      });
-    });
-  </script>
+  <script src="Scripts/script.js"></script>
 </body>
 </html>
-
