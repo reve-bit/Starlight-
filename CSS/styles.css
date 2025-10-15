@@ -139,7 +139,7 @@ nav a.active {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 50vh;
   overflow: hidden;
 }
 
@@ -174,9 +174,10 @@ nav a.active {
 .hero-about { background: url('images/hero-about.jpg') center/cover no-repeat; }
 .hero-contact { background: url('images/hero-contact.jpg') center/cover no-repeat; }
 
+
 /* ---------- Cards / Highlights ---------- */
 .card {
-  flex: 0 0 250px; /* fixed width for slider */
+  flex: 0 0 250px;
   min-height: 200px;
   background: var(--card);
   border-radius: var(--radius);
@@ -185,6 +186,11 @@ nav a.active {
   box-shadow: 0 4px 10px rgba(0,0,0,0.4);
   transition: transform 0.3s ease, box-shadow 0.3s;
   scroll-snap-align: start;
+  display: flex;  /* Added for better alignment */
+  flex-direction: column;
+  align-items: center;  /* Center items horizontally */
+  justify-content: center;  /* Center items vertically */
+  text-align: center;
 }
 
 .card:hover {
@@ -223,11 +229,18 @@ nav a.active {
   font-weight: bold;
   color: var(--violet);
   font-size: 1.1rem;
-  margin-top: 5px;
+  margin-top: 10px;  /* Added margin for spacing */
+  padding: 10px 20px;  /* Increased padding for better touch targets */
+  background: var(--violet);
+  color: var(--white);
+  border-radius: var(--radius);
+  width: 80%;  /* Make it less than full-width for better look */
+  text-align: center;
 }
 
 .card a:hover {
   color: var(--lilac);
+  background: var(--lilac);
 }
 
 /* ---------- CTA Buttons ---------- */
@@ -239,6 +252,8 @@ nav a.active {
   border-radius: var(--radius);
   font-weight: bold;
   transition: background 0.3s ease, color 0.3s, transform 0.2s;
+  opacity: 1;
+  width: auto;  /* Ensure it adjusts to content */
 }
 
 .cta-btn:hover {
@@ -665,4 +680,12 @@ footer {
   color: var(--muted, #bfbfbf);
   padding: 0 1rem;
   font-size: 0.9rem;
+}
+.performances .intro-video video {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border: none;
+  display: block;
+  border-radius: var(--radius);
 }
