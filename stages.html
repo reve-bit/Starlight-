@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Starlight+ | Stages</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">
-      <a href="index.html">Starlight+</a>
-    </div>
+    <div class="logo"><a href="index.html">Starlight+</a></div>
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
     <nav>
@@ -27,9 +25,13 @@
     <div class="nav-overlay"></div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero hero-stages">
-    <div class="hero-overlay"></div>
+  <!-- HERO -->
+  <section class="hero hero-stages" aria-label="Hero">
+    <video class="video-bg" autoplay muted loop playsinline preload="metadata" poster="Images/Stages.jpg" aria-hidden="true">
+      <source src="media/starlight_promo.mp4" type="video/mp4">
+      <source src="media/starlight_promo.webm" type="video/webm">
+    </video>
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <h1>Stages</h1>
       <p>Discover performances, covers, and creative works from our stars.</p>
@@ -38,119 +40,97 @@
   </section>
 
   <main class="container">
+    <!-- Performances Section -->
+    <section id="stages-content" class="performances">
+      <div class="card">
+        <div class="intro-video">
+          <iframe 
+            src="https://www.youtube.com/embed/b1Z-KcJErSE?autoplay=0&loop=1&playlist=b1Z-KcJErSE" 
+            title="Boys Planet – Bad Stage"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <h3 class="card-title">Boys Planet – “Bad” Stage Analysis</h3>
+        <p>This segment is embedded for commentary and fan discussion, highlighting the trainees’ expressive vocals and performance dynamics under fair use.</p>
+      </div>
 
-    <!-- Featured Stages -->
-    <section class="section" id="stages-content">
-      <h2 class="section-title">Featured Stages</h2>
-      <div class="card-grid">
-        <div class="card">
-          <img src="Images/GalaxySolo.jpg" alt="Stage Performance 1">
-          <h3 class="card-title">Galaxy Solo</h3>
-          <p>A mesmerizing solo performance from our top trainee.</p>
+      <div class="card">
+        <div class="intro-video">
+          <iframe 
+            src="https://www.youtube.com/embed/SHpPnTdWy28?autoplay=0&loop=1&playlist=SHpPnTdWy28" 
+            title="Boys Planet – Chains Stage"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
-        <div class="card">
-          <img src="Images/Orion.jpg" alt="Stage Performance 2">
-          <h3 class="card-title">Team Orion</h3>
-          <p>A group performance full of cosmic energy.</p>
+        <h3 class="card-title">Boys Planet – “Chains” Performance Breakdown</h3>
+        <p>Embedded for critique and fan education. Focuses on choreography precision, synchronization, and stage expression as part of a training analysis.</p>
+      </div>
+
+      <div class="card">
+        <div class="intro-video">
+          <iframe 
+            src="https://www.youtube.com/embed/B1ShLiq3EVc?autoplay=0&loop=1&playlist=B1ShLiq3EVc" 
+            title="IVE – XOXOZ"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
-        <div class="card">
-          <img src="Images/Aurora.jpg" alt="Stage Performance 3">
-          <h3 class="card-title">Aurora Covers</h3>
-          <p>Top fan-favorite cover performances from our stars.</p>
+        <h3 class="card-title">IVE – “XOXOZ” Showcase Review</h3>
+        <p>Used for commentary purposes. Examines IVE’s charisma, concept interpretation, and the artistic elements behind the stage production.</p>
+      </div>
+
+      <div class="card">
+        <div class="intro-video">
+          <iframe 
+            src="https://www.youtube.com/embed/ehPSDGVY-JQ?autoplay=0&loop=1&playlist=ehPSDGVY-JQ" 
+            title="I-LAND 2 – If I Were a Boy"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
-        <div class="card">
-          <img src="Images/Nebula.jpg" alt="Stage Performance 4">
-          <h3 class="card-title">Nebula Duets</h3>
-          <p>Dynamic duets combining stellar talents.</p>
+        <h3 class="card-title">I-LAND 2 – “If I Were a Boy” Vocal Study</h3>
+        <p>Included for educational and critical review of vocal delivery, tone control, and emotional storytelling demonstrated by the trainee.</p>
+      </div>
+
+      <div class="card">
+        <div class="intro-video">
+          <iframe 
+            src="https://www.youtube.com/embed/3q7e1gWO4EY?autoplay=0&loop=1&playlist=3q7e1gWO4EY" 
+            title="Boys Planet – Luck Macho"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
         </div>
-        <div class="card">
-          <img src="Images/Cosmic.jpg" alt="Stage Performance 5">
-          <h3 class="card-title">Cosmic Dance</h3>
-          <p>High-energy choreography that lights up the stage.</p>
-        </div>
+        <h3 class="card-title">Boys Planet – “Luck Macho” Stage Review</h3>
+        <p>Embedded for commentary and fair-use analysis, focusing on energy, team synergy, and creative stage direction within the performance.</p>
       </div>
     </section>
 
-    <!-- Interactive Voting Section -->
+    <!-- Voting -->
     <section class="section">
       <h2 class="section-title">Vote for Your Favorite Star</h2>
       <div class="slider-container">
         <button class="slider-btn prev">&#10094;</button>
         <div class="slider-wrapper">
-
-          <!-- Voting Card 1 -->
-          <div class="card">
-            <img src="Images/Nova.jpg" alt="Star A">
-            <h3 class="card-title">Star A</h3>
-            <p>Team Nova</p>
-            <div class="vote-count">Votes: <span class="count">12,345</span></div>
-            <div class="vote-bar"><div class="vote-fill" style="width: 65%;"></div></div>
-            <a href="community.html" class="cta-btn">Vote Now</a>
-          </div>
-
-          <!-- Voting Card 2 -->
-          <div class="card">
-            <img src="Images/Orion.jpg" alt="Star B">
-            <h3 class="card-title">Star B</h3>
-            <p>Team Orion</p>
-            <div class="vote-count">Votes: <span class="count">9,876</span></div>
-            <div class="vote-bar"><div class="vote-fill" style="width: 52%;"></div></div>
-            <a href="community.html" class="cta-btn">Vote Now</a>
-          </div>
-
-          <!-- Voting Card 3 -->
-          <div class="card">
-            <img src="Images/TAurora.jpg" alt="Star C">
-            <h3 class="card-title">Star C</h3>
-            <p>Team Aurora</p>
-            <div class="vote-count">Votes: <span class="count">7,654</span></div>
-            <div class="vote-bar"><div class="vote-fill" style="width: 41%;"></div></div>
-            <a href="community.html" class="cta-btn">Vote Now</a>
-          </div>
-
-          <!-- Voting Card 4 -->
-          <div class="card">
-            <img src="Images/Meteor.jpg" alt="Star D">
-            <h3 class="card-title">Star D</h3>
-            <p>Team Meteor</p>
-            <div class="vote-count">Votes: <span class="count">6,432</span></div>
-            <div class="vote-bar"><div class="vote-fill" style="width: 35%;"></div></div>
-            <a href="community.html" class="cta-btn">Vote Now</a>
-          </div>
-
-          <!-- Add more cards as needed -->
-
+          <div class="card"><img src="Images/Nova.jpg"><h3 class="card-title">Star A</h3><p>Team Nova</p><a href="community.html" class="cta-btn">Vote Now</a></div>
+          <div class="card"><img src="Images/Orion.jpg"><h3 class="card-title">Star B</h3><p>Team Orion</p><a href="community.html" class="cta-btn">Vote Now</a></div>
+          <div class="card"><img src="Images/TAurora.jpg"><h3 class="card-title">Star C</h3><p>Team Aurora</p><a href="community.html" class="cta-btn">Vote Now</a></div>
+          <div class="card"><img src="Images/Meteor.jpg"><h3 class="card-title">Star D</h3><p>Team Meteor</p><a href="community.html" class="cta-btn">Vote Now</a></div>
         </div>
         <button class="slider-btn next">&#10095;</button>
       </div>
     </section>
-
   </main>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 Starlight+. All Rights Reserved.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script>
-    // Hamburger
-    const menuToggle = document.querySelector('.menu-toggle');
-    const overlay = document.querySelector('.nav-overlay');
-    overlay.addEventListener('click', () => menuToggle.checked = false);
-
-    // Slider
-    const prevBtn = document.querySelector('.slider-btn.prev');
-    const nextBtn = document.querySelector('.slider-btn.next');
-    const sliderWrapper = document.querySelector('.slider-wrapper');
-
-    prevBtn.addEventListener('click', () => {
-      sliderWrapper.scrollBy({ left: -300, behavior: 'smooth' });
-    });
-    nextBtn.addEventListener('click', () => {
-      sliderWrapper.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-  </script>
+  <footer><p>© 2025 Starlight+. All Rights Reserved.</p></footer>
+  <script src="Scripts/script.js"></script>
 </body>
 </html>
-
