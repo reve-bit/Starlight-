@@ -3,84 +3,258 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Starlight+ | Contact</title>
+  <title>Starlight+ | Contact & Help Center</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="CSS/help.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Header -->
   <header>
     <div class="logo">
       <a href="index.html">Starlight+</a>
     </div>
+
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
-    <label for="menu-toggle" class="menu-btn"><span></span><span></span><span></span></label>
+    <label for="menu-toggle" class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></label>
+
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="stages.html">Stages</a></li>
         <li><a href="community.html">Community</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact & Help</a></li>
       </ul>
     </nav>
-    <div class="nav-overlay"></div>
+
+    <div class="nav-overlay" data-close></div>
   </header>
 
-   <!-- HERO -->
-  <section class="hero hero-contact" aria-label="Hero">
+  <!-- HERO -->
+  <section class="hero help-hero" aria-label="Contact & Help Center">
     <video class="video-bg" autoplay muted loop playsinline preload="metadata" poster="Images/Stages.jpg" aria-hidden="true">
       <source src="Media/starlight_promo.mp4" type="video/mp4">
       <source src="Media/starlight_promo.mp4" type="video/webm">
     </video>
-
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
-      <h1>Contact Us</h1>
-      <p>We’d love to hear from you! Reach out for support, feedback, or inquiries.</p>
-      <a href="#contact-form" class="cta-btn">Send Message</a>
+      <h1>Contact & Help Center</h1>
+      <p>We're here to help! Get support or reach out to our team.</p>
+      <a href="#stages-content" class="cta-btn">Explore</a>
+    </div>
   </section>
 
-  <!-- Contact Section -->
-  <main class="container">
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content" class="container">
+    <!-- Contact Form Section -->
     <section class="section" id="contact-form">
       <h2 class="section-title">Get in Touch</h2>
+      
+      <div class="contact-help-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+          <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <select>
+              <option value="">Select Inquiry Type</option>
+              <option value="technical">Technical Support</option>
+              <option value="billing">Billing Issue</option>
+              <option value="content">Content Question</option>
+              <option value="general">General Inquiry</option>
+            </select>
+            <textarea placeholder="Your Message" rows="6" required></textarea>
+            <button type="submit" class="cta-btn">Send Message</button>
+          </form>
+          <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+            <h3>Thank you for your message!</h3>
+            <p>We've received your inquiry and will get back to you within 24 hours.</p>
+          </div>
+        </div>
 
-      <!-- White Contact Form -->
-      <form class="contact-form" style="max-width:600px; margin:auto; display:flex; flex-direction:column; gap:12px; background:#111; padding:20px; border-radius:12px;">
-        <input type="text" placeholder="Your Name" required style="padding:10px; border-radius:8px; border:none; background:#222; color:#fff;">
-        <input type="email" placeholder="Your Email" required style="padding:10px; border-radius:8px; border:none; background:#222; color:#fff;">
-        <textarea placeholder="Your Message" rows="6" required style="padding:10px; border-radius:8px; border:none; background:#222; color:#fff;"></textarea>
-        <button type="submit" class="cta-btn">Submit</button>
-      </form>
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-method">
+            <div>
+              <h4>Hotline</h4>
+              <p>+63 912 345 6789</p>
+              <span>Available 24/7 for premium members</span>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div>
+              <h4>Email Support</h4>
+              <p>support@starlightplus.com</p>
+              <span>Response within 24 hours</span>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div>
+              <h4>Live Chat</h4>
+              <p>Available Mon-Fri, 9AM-6PM</p>
+              <span>Instant support during business hours</span>
+            </div>
+          </div>
 
-      <!-- Hotline & App Info -->
-      <div class="contact-info" style="text-align:center; margin-top:30px; color:#fff;">
-        <h3 style="color: var(--lilac);"><i class="fas fa-phone-alt"></i> Hotline</h3>
-        <p>Call us at <strong>+63 912 345 6789</strong></p>
-
-        <h3 style="color: var(--lilac); margin-top:20px;"><i class="fas fa-mobile-alt"></i> Mobile App</h3>
-        <p>Download our Starlight+ app on 
-          <a href="#" style="color: var(--violet);"><i class="fab fa-apple"></i> iOS</a> or 
-          <a href="#" style="color: var(--violet);"><i class="fab fa-android"></i> Android</a> for updates and voting.
-        </p>
+          <div class="app-download">
+            <h4>Mobile App</h4>
+            <p>Download our Starlight+ app for updates and voting</p>
+            <div class="app-buttons">
+              <a href="#" class="app-btn">
+                <i class="fab fa-apple"></i>
+                <span>App Store</span>
+              </a>
+              <a href="#" class="app-btn">
+                <i class="fab fa-google-play"></i>
+                <span>Google Play</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Social Media -->
-      <h2 class="section-title" style="margin-top:40px;">Social Media</h2>
-      <p style="text-align:center; color:#fff;">
-        Follow us on 
-        <a href="#" style="color: var(--violet);"><i class="fab fa-instagram"></i> Instagram</a>, 
-        <a href="#" style="color: var(--violet);"><i class="fab fa-twitter"></i> Twitter</a>, and 
-        <a href="#" style="color: var(--violet);"><i class="fab fa-facebook"></i> Facebook</a> for updates.
-      </p>
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How do I create a Starlight+ account?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Creating an account is simple! Click on the "Sign Up" button in the top right corner of our homepage, enter your email address, create a password, and follow the verification steps. You'll be ready to explore Starlight+ in minutes!</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Is there a free trial available?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We offer a 7-day free trial for new users. You'll have access to all premium features during this period. No credit card is required to start your trial.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How can I participate in voting events?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>To participate in voting events, you need an active Starlight+ account. Navigate to the "Community" section, find ongoing voting events, and follow the instructions. Some events may require earned or purchased voting tokens.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I download content to watch offline?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, premium subscribers can download select content for offline viewing. Look for the download icon on compatible videos. Note that some exclusive live content may not be available for download due to licensing restrictions.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How do I cancel my subscription?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You can cancel your subscription at any time by going to your Account Settings, selecting "Subscription", and clicking "Cancel Subscription". Your access will continue until the end of your current billing period.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What devices are supported?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Starlight+ is available on iOS, Android, Windows, and macOS. You can also access our web platform through all modern browsers. Our mobile apps are available on the App Store and Google Play Store.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="section">
+      <h2 class="section-title">Follow Us</h2>
+      <div class="social-media-links">
+        <a href="#" class="social-link">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+        <a href="#" class="social-link">
+          <i class="fab fa-facebook"></i>
+          <span>Facebook</span>
+        </a>
+      </div>
     </section>
   </main>
 
+ <!-- Footer -->
   <footer>
-    <p>© 2025 Starlight+. All Rights Reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Starlight+</h3>
+        <p>Your cosmic hub for fandom, talent, and interactive entertainment.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/christructure" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/christructure" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="stages.html">Stages</a>
+        <a href="community.html">Community</a>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+       
+      </div>
+    </div>
+    <p class="copyright">© 2025 Starlight+. All Rights Reserved.</p>
+    <p class="disclaimer">This website is for educational purposes only. All content is used under fair use for educational demonstration.</p>
   </footer>
-<script src="Scripts/script.js"></script>
+
+  <!-- Shooting Stars -->
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <!-- Constellation Lines -->
+  <div class="constellation">
+    <div class="constellation-line"></div>
+    <div class="constellation-line"></div>
+    <div class="constellation-line"></div>
+    <div class="constellation-line"></div>
+  </div>
+
+  <script src="Scripts/script.js"></script>
 </body>
 </html>
