@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Collectibles | Starlight+</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html">Starlight+</a>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></label>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="stages.html">Stages</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-overlay" data-close></div>
+  </header>
+
+  <!-- Enhanced Hero Section -->
+  <section class="collectibles-hero">
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>Digital Collectibles</h1>
+      <p>Own a piece of the cosmos with exclusive digital assets from your favorite artists</p>
+      <div class="hero-badges">
+        <span class="hero-badge">Limited Edition</span>
+        <span class="hero-badge">Blockchain Verified</span>
+        <span class="hero-badge">Exclusive Content</span>
+      </div>
+    </div>
+    
+    <!-- Animated Background Elements -->
+    <div class="floating-collectibles">
+      <div class="floating-item" style="--delay: 0s; --x: 10%;">
+        <div class="collectible-preview">🎵</div>
+      </div>
+      <div class="floating-item" style="--delay: 1s; --x: 30%;">
+        <div class="collectible-preview">🌟</div>
+      </div>
+      <div class="floating-item" style="--delay: 2s; --x: 50%;">
+        <div class="collectible-preview">🎬</div>
+      </div>
+      <div class="floating-item" style="--delay: 3s; --x: 70%;">
+        <div class="collectible-preview">📸</div>
+      </div>
+      <div class="floating-item" style="--delay: 4s; --x: 90%;">
+        <div class="collectible-preview">🎨</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+      <div class="countdown-container">
+        <h2>Launching Soon!</h2>
+        <p>Be among the first to own exclusive Starlight+ digital collectibles</p>
+        
+        <div class="countdown-timer">
+          <div class="countdown-unit">
+            <span class="number" id="days">30</span>
+            <span class="label">Days</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="number" id="hours">12</span>
+            <span class="label">Hours</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="number" id="minutes">45</span>
+            <span class="label">Minutes</span>
+          </div>
+          <div class="countdown-unit">
+            <span class="number" id="seconds">18</span>
+            <span class="label">Seconds</span>
+          </div>
+        </div>
+        
+        <div class="countdown-progress">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-text">
+            <span>Early Access Registration: <strong id="registered-count">1,247</strong> fans joined</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Notification Section -->
+    <section class="notify-section enhanced-notify">
+      <div class="notify-content">
+        <div class="notify-text">
+          <h2>Get Early Access</h2>
+          <p>Be the first to know when our digital collectibles launch. Get exclusive early access and special rewards for being an early supporter.</p>
+          
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <span class="benefit-icon">🎁</span>
+              <span>Exclusive early access pass</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">💰</span>
+              <span>Special founding member pricing</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">⭐</span>
+              <span>Bonus collectible for early registrants</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-icon">🔔</span>
+              <span>Priority notifications for new drops</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="notify-form-container">
+          <form class="notify-form enhanced-form">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="favorite-artist">Favorite Artist (Optional)</label>
+              <select id="favorite-artist">
+                <option value="">Select your favorite</option>
+                <option value="galaxy-beats">Galaxy Beats</option>
+                <option value="cosmic-waves">Cosmic Waves</option>
+                <option value="starlight-dream">Starlight Dream</option>
+                <option value="nebula-voice">Nebula Voice</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="newsletter" checked>
+                <span class="checkmark"></span>
+                Send me updates about new collectible drops and artist news
+              </label>
+            </div>
+            
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="early-access" checked>
+                <span class="checkmark"></span>
+                Notify me about exclusive early access opportunities
+              </label>
+            </div>
+            
+            <button type="submit" class="cta-btn notify-btn">
+              <span class="btn-text">Get Early Access</span>
+              <span class="btn-loading">Registering...</span>
+            </button>
+            
+            <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collectible Showcase -->
+    <section class="collectibles-showcase">
+      <h2>What's Coming</h2>
+      <p>Get ready for these exclusive digital collectibles</p>
+      
+      <div class="showcase-grid">
+        <div class="showcase-item">
+          <div class="showcase-preview">
+            <div class="preview-image">🎵</div>
+            <div class="preview-badge">Ultra Rare</div>
+          </div>
+          <div class="showcase-content">
+            <h3>Golden Audio Moments</h3>
+            <p>Limited edition audio clips from iconic performances with exclusive artwork</p>
+            <div class="showcase-meta">
+              <span class="edition">Edition: 100</span>
+              <span class="price">Starting at $49.99</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-preview">
+            <div class="preview-image">🎬</div>
+            <div class="preview-badge">Exclusive</div>
+          </div>
+          <div class="showcase-content">
+            <h3>Behind the Scenes</h3>
+            <p>Never-before-seen footage and photos from studio sessions and rehearsals</p>
+            <div class="showcase-meta">
+              <span class="edition">Edition: 500</span>
+              <span class="price">Starting at $24.99</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-preview">
+            <div class="preview-image">🌟</div>
+            <div class="preview-badge">Founder</div>
+          </div>
+          <div class="showcase-content">
+            <h3>Cosmic Fan Pass</h3>
+            <p>Special membership token granting access to exclusive events and content</p>
+            <div class="showcase-meta">
+              <span class="edition">Edition: 1000</span>
+              <span class="price">Starting at $9.99</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="showcase-item">
+          <div class="showcase-preview">
+            <div class="preview-image">🎨</div>
+            <div class="preview-badge">Limited</div>
+          </div>
+          <div class="showcase-content">
+            <h3>Artist Collaborations</h3>
+            <p>Digital artwork created in collaboration with your favorite artists</p>
+            <div class="showcase-meta">
+              <span class="edition">Edition: 250</span>
+              <span class="price">Starting at $39.99</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="collectibles-faq">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What are digital collectibles?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Digital collectibles are unique digital assets that represent ownership of exclusive content from your favorite artists. They're secured on the blockchain, making them authentic, verifiable, and truly yours.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How do I purchase collectibles?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Once launched, you'll be able to purchase collectibles directly through Starlight+ using various payment methods. Early registrants will get first access to limited editions.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I trade or sell my collectibles?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! You can trade collectibles with other fans in our secure marketplace or hold onto them as they may increase in value over time.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What makes these collectibles special?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Our collectibles feature exclusive, never-before-seen content directly from the artists, limited edition releases, and come with special perks and rewards for owners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+      <div class="cta-content">
+        <h2>Don't Miss Out!</h2>
+        <p>Join thousands of fans waiting for the launch of Starlight+ Digital Collectibles</p>
+        <div class="cta-stats">
+          <div class="stat">
+            <span class="stat-number">2,458</span>
+            <span class="stat-label">Fans Registered</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">15</span>
+            <span class="stat-label">Days Until Launch</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Exclusive Collectibles</span>
+          </div>
+        </div>
+        <a href="#notify-section" class="cta-btn large-btn">Get Notified at Launch</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Starlight+</h3>
+        <p>Your cosmic hub for fandom, talent, and interactive entertainment.</p>
+        <div class="social-links">
+          <a href="https://www.facebook.com/christructure" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/christructure" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="stages.html">Stages</a>
+        <a href="community.html">Community</a>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h4>Collectibles</h4>
+        <a href="#showcase">What's Coming</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <p class="copyright">© 2025 Starlight+. All Rights Reserved.</p>
+    <p class="disclaimer">This website is for educational purposes only. All content is used under fair use for educational demonstration.</p>
+  </footer>
+
+  <!-- Shooting Stars -->
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+  <div class="shooting-star"></div>
+
+  <!-- Constellation Lines -->
+  <div class="constellation">
+    <div class="constellation-line"></div>
+    <div class="constellation-line"></div>
+    <div class="constellation-line"></div>
+    <div class="constellation-line"></div>
+  </div>
+
+  <script src="Scripts/script.js"></script>
+</body>
+</html>
