@@ -4,10 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Collectibles | Starlight+</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 <body>
+  <!-- Background Music Player -->
+  <div id="music-player" class="music-player">
+    <audio id="background-music" loop preload="auto">
+      <source src="Media/aespa 에스파 'Drama' (Official Instrumental).mp3" type="audio/mpeg">
+      <source src="Media/background-music.ogg" type="audio/ogg">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <div class="music-controls">
+      <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle sound">
+        <span class="sound-on-text">Sound ON</span>
+        <span class="sound-off-text">Sound OFF</span>
+      </button>
+      
+      <div class="volume-control">
+        <span class="volume-label">Volume:</span>
+        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.1" value="0.5">
+      </div>
+    </div>
+  </div>
+
   <!-- Header -->
   <header>
     <div class="logo">
@@ -150,7 +173,6 @@
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" id="newsletter" checked>
-                <span class="checkmark"></span>
                 Send me updates about new collectible drops and artist news
               </label>
             </div>
@@ -158,14 +180,12 @@
             <div class="form-group">
               <label class="checkbox-label">
                 <input type="checkbox" id="early-access" checked>
-                <span class="checkmark"></span>
                 Notify me about exclusive early access opportunities
               </label>
             </div>
             
             <button type="submit" class="cta-btn notify-btn">
               <span class="btn-text">Get Early Access</span>
-              <span class="btn-loading">Registering...</span>
             </button>
             
             <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
@@ -245,7 +265,6 @@
     <!-- FAQ Section -->
     <section class="collectibles-faq">
       <h2>Frequently Asked Questions</h2>
-      
       <div class="faq-container">
         <div class="faq-item">
           <div class="faq-question">
@@ -253,6 +272,7 @@
             <span class="faq-toggle">+</span>
           </div>
           <div class="faq-answer">
+            <p></p>
             <p>Digital collectibles are unique digital assets that represent ownership of exclusive content from your favorite artists. They're secured on the blockchain, making them authentic, verifiable, and truly yours.</p>
           </div>
         </div>
@@ -263,6 +283,7 @@
             <span class="faq-toggle">+</span>
           </div>
           <div class="faq-answer">
+            <p></p>
             <p>Once launched, you'll be able to purchase collectibles directly through Starlight+ using various payment methods. Early registrants will get first access to limited editions.</p>
           </div>
         </div>
@@ -273,6 +294,7 @@
             <span class="faq-toggle">+</span>
           </div>
           <div class="faq-answer">
+            <p></p>
             <p>Yes! You can trade collectibles with other fans in our secure marketplace or hold onto them as they may increase in value over time.</p>
           </div>
         </div>
@@ -283,6 +305,7 @@
             <span class="faq-toggle">+</span>
           </div>
           <div class="faq-answer">
+            <p></p>
             <p>Our collectibles feature exclusive, never-before-seen content directly from the artists, limited edition releases, and come with special perks and rewards for owners.</p>
           </div>
         </div>
