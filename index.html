@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Starlight+ | Home</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css" />
 </head>
@@ -32,9 +34,10 @@
 
   <!-- HERO -->
   <section class="hero hero-home" aria-label="Hero">
-    <video class="video-bg" autoplay muted loop playsinline preload="metadata" poster="Images/Stages.jpg" aria-hidden="true">
+    <video class="video-bg" autoplay muted loop playsinline preload="auto" poster="Images/Stages.jpg" aria-hidden="true">
       <source src="Media/starlight_promo.mp4" type="video/mp4">
-      <source src="Media/starlight_promo.mp4" type="video/webm">
+      <source src="Media/starlight_promo.webm" type="video/webm">
+      Your browser does not support the video tag.
     </video>
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-content">
@@ -52,8 +55,10 @@
       
       <!-- Full-width intro video -->
       <div class="video-container">
-        <video class="intro-video" autoplay loop playsinline preload="metadata" poster="Images/Stages.jpg" controls>
-          <source src="media/intro.mp4" type="video/mp4">
+        <video class="intro-video" autoplay muted loop playsinline preload="auto" poster="Images/Stages.jpg" controls>
+          <source src="Media/intro.mp4" type="video/mp4">
+          <source src="Media/intro.webm" type="video/webm">
+          Your browser does not support the video tag.
         </video>
       </div>
     
@@ -84,7 +89,6 @@
     <section class="section full-width">
       <div class="section-header">
         <h2 class="section-title">Latest Updates</h2>
-        <a href="#" class="view-all">View All →</a>
       </div>
       <div class="slider-container large-slider">
         <button class="slider-btn prev" aria-label="Previous">&#10094;</button>
@@ -95,8 +99,9 @@
             <h3 class="card-title">Galaxy Beats Concert</h3>
             <p>Live-streamed event featuring top performers. Mark your calendars for this cosmic experience!</p>
             <div class="card-meta">
-              <span class="date">Dec 15, 2024</span>
-              <span class="status">Coming Soon</span>
+              <span class="date">Dec 15, 2024 </span>
+              <p></p>
+              <span class="status"> Coming Soon</span>
             </div>
           </div>
           <div class="card update-card">
@@ -106,6 +111,7 @@
             <p>See the latest stunning artwork featured in our exclusive fan gallery showcase.</p>
             <div class="card-meta">
               <span class="date">Dec 10, 2024</span>
+              <p></p>
               <span class="status">Featured</span>
             </div>
           </div>
@@ -116,6 +122,7 @@
             <p>Raw practice footage and candid moments, available only on Starlight+!</p>
             <div class="card-meta">
               <span class="date">Dec 8, 2024</span>
+              <p></p>
               <span class="status">Premium</span>
             </div>
           </div>
@@ -126,6 +133,7 @@
             <p>Support your favorite stars in the upcoming survival stage rankings! Every vote counts.</p>
             <div class="card-meta">
               <span class="date">Dec 5, 2024</span>
+              <p></p>
               <span class="status">Active</span>
             </div>
           </div>
@@ -136,6 +144,7 @@
             <p>Limited edition cosmic fan merch available now. Exclusive designs, limited quantities!</p>
             <div class="card-meta">
               <span class="date">Dec 1, 2024</span>
+              <p></p>
               <span class="status">Available</span>
             </div>
           </div>
@@ -157,7 +166,6 @@
           </div>
         </a>
         <a href="community.html" class="card quick-link-card">
-
           <img src="Images/community.jpg" alt="Community Section">
           <div class="card-content">
             <h3>Global Community</h3>
@@ -228,7 +236,6 @@
         <h4>Support</h4>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact</a>
-
       </div>
     </div>
     <p class="copyright">© 2025 Starlight+. All Rights Reserved.</p>
