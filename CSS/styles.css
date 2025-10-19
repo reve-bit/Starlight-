@@ -368,15 +368,19 @@ nav a:hover:not(.active) {
 }
 
 .card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: var(--radius);
-  margin-bottom: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(201, 167, 235, 0.1);
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(201, 167, 235, 0.1);
 }
-
+.card.update-card img {
+    height: 210px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    margin-bottom: 0;
+}
 .card img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px var(--hover-glow);
@@ -437,8 +441,8 @@ nav a:hover:not(.active) {
   color: var(--lilac);
   text-shadow: 0 0 15px rgba(201, 167, 235, 0.3);
   position: relative;
+  width: 100%; /* Ensure it takes full width */
 }
-
 .section-title::after {
   content: '';
   position: absolute;
@@ -694,6 +698,52 @@ footer {
   box-sizing: border-box;
   backdrop-filter: blur(10px);
 }
+/* Contact Page Dropdown Styles */
+.contact-form select {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(201, 167, 235, 0.3);
+  border-radius: var(--radius);
+  padding: 12px 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C9A7EB'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+  padding-right: 45px;
+}
+
+.contact-form select:focus {
+  outline: none;
+  border-color: var(--lilac);
+  box-shadow: 0 0 10px rgba(201, 167, 235, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Dropdown options styling */
+.contact-form select option {
+  background: var(--card);
+  color: var(--white);
+  padding: 10px;
+}
+
+.contact-form select {
+  background: rgba(106, 0, 244, 0.2);
+  color: var(--lilac);
+  border: 1px solid var(--violet);
+}
+
+.contact-form select:focus {
+  background: rgba(106, 0, 244, 0.3);
+  border-color: var(--lilac);
+}
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
@@ -786,16 +836,6 @@ footer {
   background: rgba(0, 0, 0, 0.6);
   z-index: -1;
 }
-/* ---------- Intro Video Styles ---------- */
-.intro-video {
-  width: 100%;
-  height: auto;
-  max-height: 500px; /* unified max, overridden by specific contexts if needed */
-  object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: var(--radius);
-  box-shadow: 0 0 20px rgba(106, 0, 244, 0.3);
-}
 .performances {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -831,13 +871,9 @@ footer {
   padding: 0 1rem;
   font-size: 0.9rem;
 }
+/* Remove this rule since we're using iframes now */
 .performances .intro-video video {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border: none;
-  display: block;
-  border-radius: var(--radius);
+  display: none; /* Hide video elements since we're using YouTube iframes */
 }
 /* Add these to your existing CSS */
 
@@ -907,17 +943,6 @@ footer {
   margin-bottom: 30px;
 }
 
-.view-all {
-  color: var(--lilac);
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.view-all:hover {
-  color: var(--violet);
-  transform: translateX(5px);
-}
 
 /* Large Slider */
 .large-slider {
@@ -949,9 +974,14 @@ footer {
 }
 
 .update-card img {
-  width: 100%;
-  height: 200px;
-  margin-bottom: 0;
+    width: 100%;
+    height: 210px !important; /* Force override */
+    object-fit: cover;
+    border-radius: var(--radius) var(--radius) 0 0 !important; /* Top corners only */
+    margin-bottom: 0 !important;
+    border: 1px solid rgba(201, 167, 235, 0.1);
+    border-bottom: none; /* Remove bottom border since it meets the card */
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 .update-card .card-title {
@@ -2314,7 +2344,7 @@ textarea.form-control {
   transition: width 0.3s ease;
   box-shadow: 0 0 20px rgba(106, 0, 244, 0.5);
 }
-/* Enhanced Notify Section */
+/* ---------- Enhanced Notification Form Fixes ---------- */
 .enhanced-notify {
   background: var(--card);
   border-radius: var(--radius);
@@ -2333,10 +2363,25 @@ textarea.form-control {
   margin: 0 auto;
 }
 
+.notify-text h2 {
+  color: var(--lilac);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(201, 167, 235, 0.3);
+}
+
+.notify-text > p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
 .benefits-list {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 30px;
 }
 
 .benefit-item {
@@ -2364,16 +2409,174 @@ textarea.form-control {
   justify-content: center;
   background: var(--violet);
   border-radius: 10px;
+  flex-shrink: 0;
 }
-/* Collectibles Showcase */
+
+/* Enhanced Form Styles */
+.enhanced-form {
+  background: rgba(10, 10, 26, 0.5);
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(201, 167, 235, 0.2);
+}
+/* Favorite Artist Dropdown Specific Styles */
+#favorite-artist {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  border: 1px solid rgba(201, 167, 235, 0.3);
+  border-radius: var(--radius);
+  padding: 12px 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+#favorite-artist:focus {
+  outline: none;
+  border-color: var(--lilac);
+  box-shadow: 0 0 10px rgba(201, 167, 235, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Dropdown options styling */
+#favorite-artist option {
+  background: var(--card);
+  color: var(--white);
+  padding: 10px;
+}
+
+/* Custom dropdown arrow */
+#favorite-artist {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C9A7EB'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+  padding-right: 45px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--lilac);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(201, 167, 235, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--lilac);
+  box-shadow: 0 0 10px rgba(201, 167, 235, 0.3);
+}
+
+.form-group input::placeholder {
+  color: var(--muted);
+}
+
+/* Checkbox Styles */
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  accent-color: var(--violet);
+}
+
+/* Form Button */
+.notify-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  background: var(--violet);
+  border: none;
+  border-radius: var(--radius);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.notify-btn:hover {
+  background: var(--lilac);
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(201, 167, 235, 0.4);
+}
+
+.btn-loading {
+  display: none;
+}
+
+.form-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-top: 15px;
+  line-height: 1.4;
+}
+/* ---------- Collectible Showcase Grid Fixes ---------- */
 .collectibles-showcase {
   padding: 80px 20px;
   text-align: center;
+  margin: 0.1px 0px;
+}
+
+.collectibles-showcase h2 {
+  font-size: 2.5rem;
+  color: var(--lilac);
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px rgba(201, 167, 235, 0.3);
+}
+
+.collectibles-showcase > p {
+  font-size: 1.2rem;
+  color: var(--muted);
+  margin-bottom: 50px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
@@ -2386,6 +2589,8 @@ textarea.form-control {
   border: 1px solid rgba(201, 167, 235, 0.1);
   transition: all 0.3s ease;
   box-shadow: 0 8px 30px rgba(106, 0, 244, 0.2);
+  display: flex;
+  flex-direction: column;
 }
 
 .showcase-item:hover {
@@ -2401,6 +2606,7 @@ textarea.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
 .preview-image {
@@ -2419,6 +2625,28 @@ textarea.form-control {
   font-size: 0.8rem;
   font-weight: 600;
   border: 1px solid var(--lilac);
+  text-transform: uppercase;
+}
+
+.showcase-content {
+  padding: 25px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.showcase-content h3 {
+  color: var(--lilac);
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.showcase-content p {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
 }
 
 .showcase-meta {
@@ -2427,6 +2655,7 @@ textarea.form-control {
   align-items: center;
   padding-top: 15px;
   border-top: 1px solid rgba(201, 167, 235, 0.1);
+  margin-top: auto;
 }
 
 .edition {
@@ -2652,54 +2881,64 @@ textarea.form-control {
 .pulse {
   animation: pulse 1s infinite;
 }
-/* Responsive Design */
+/* ---------- Responsive Design ---------- */
 @media (max-width: 1024px) {
   .notify-content {
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .collectibles-hero {
-    padding: 140px 20px 80px;
-    min-height: 70vh;
+  .collectibles-showcase {
+    padding: 60px 20px;
   }
   
-  .countdown-unit .number {
+  .collectibles-showcase h2 {
     font-size: 2rem;
-    padding: 12px;
   }
   
-  .showcase-grid,
-  .features-grid {
+  .showcase-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .enhanced-notify {
+    padding: 40px 25px;
+  }
+  
+  .notify-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .benefit-item {
+    padding: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-badges {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .countdown-timer {
-    gap: 10px;
-  }
-  
-  .floating-item {
-    display: none;
-  }
-  
   .showcase-meta {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
   }
   
-  .cta-stats {
+  .price {
+    align-self: flex-end;
+  }
+  
+  .enhanced-form {
+    padding: 20px 15px;
+  }
+  
+  .benefit-item {
     flex-direction: column;
-    gap: 20px;
+    text-align: center;
+    gap: 10px;
   }
 }
 /* ---------- Exclusive Updates Specific Styles ---------- */
@@ -4282,3 +4521,327 @@ textarea.form-control {
     gap: 20px;
   }
 }
+/* ---------- Enhanced Mobile Navigation ---------- */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(15, 15, 35, 0.98);
+    z-index: 1000; /* Ensure header stays on top */
+  }
+
+  /* Enhanced Hamburger Button */
+  .menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Higher than header */
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  /* Enhanced Mobile Navigation Panel */
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--surface) 0%, var(--cosmic-dark) 100%);
+    backdrop-filter: blur(30px);
+    padding: 80px 0 40px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999; /* Lower than header but higher than hero */
+    border-left: 1px solid rgba(201, 167, 235, 0.1);
+    box-shadow: -10px 0 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Enhanced Overlay */
+  .nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 5, 16, 0.8);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 998; /* Below nav but above everything else */
+    cursor: pointer;
+  }
+
+  .menu-toggle:checked ~ .nav-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Ensure hero content stays behind mobile menu */
+  .hero-content {
+    position: relative;
+    z-index: 1; /* Lower than mobile navigation */
+  }
+
+  .container {
+    position: relative;
+    z-index: 2; /* Normal content flow */
+  }
+}
+
+/* ---------- Fix for Hero Section Z-index ---------- */
+.hero {
+  position: relative;
+  z-index: 1; /* Ensure hero stays in normal flow */
+}
+
+/* ---------- Ensure Main Content Stays Behind Menu ---------- */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Tablet and Desktop Z-index Fix ---------- */
+@media (min-width: 769px) {
+  nav {
+    z-index: 1000; /* Keep nav above content on larger screens */
+  }
+  
+  .hero-content {
+    z-index: 2; /* Normal z-index for desktop */
+  }
+}
+/* ---------- Logo Behind Hamburger Fix ---------- */
+@media (max-width: 768px) {
+  .menu-toggle:checked ~ .logo {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-toggle:not(:checked) ~ .logo {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+  }
+}
+/* ---------- Netflix-Style Video Player ---------- */
+
+/* Video container improvements */
+.intro-video {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.intro-video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+}
+
+.video-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.intro-video:hover .video-placeholder img {
+    opacity: 0.4;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--lilac);
+    border: none;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px darkmagenta;
+}
+
+.play-button:hover {
+    background: #c300ff;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 40px purple;
+}
+
+.video-placeholder p {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+/* Loading state */
+.video-loading .video-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin: -25px 0 0 -25px;
+    border: 3px solid palevioletred;
+    border-top: 3px solid pink;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 11;
+}
+
+.loading-spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Video loaded state */
+.video-loaded .video-placeholder {
+    display: none;
+}
+
+.video-loaded .video-player {
+    display: block !important;
+}
+
+/* Netflix fullscreen improvements */
+.netflix-fullscreen {
+    font-family: 'Poppins', sans-serif;
+}
+
+.netflix-controls-overlay {
+    transition: opacity 0.3s ease;
+}
+
+.netflix-controls-overlay:hover {
+    opacity: 1 !important;
+}
+
+/* Progress bar improvements */
+.progress-container:hover .progress-hover {
+    opacity: 1 !important;
+}
+
+/* Responsive video improvements */
+@media (max-width: 768px) {
+    .intro-video {
+        height: 200px;
+    }
+    
+    .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 1.3rem;
+    }
+    
+    .netflix-exit-btn,
+    .control-btn {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .bottom-controls {
+        padding: 20px !important;
+    }
+    
+    .top-controls {
+        padding: 15px !important;
+    }
+}
+
+/* Card improvements for better video presentation */
+.performances .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(106, 0, 244, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(201, 167, 235, 0.1);
+}
+
+.performances .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(106, 0, 244, 0.3);
+    border-color: rgba(201, 167, 235, 0.3);
+}
+
+.card-title {
+    color: var(--lilac);
+    margin: 1rem 1rem 0.5rem;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 10px rgba(201, 167, 235, 0.3);
+}
+
+.performances .card p {
+    color: var(--muted);
+    padding: 0 1rem 1rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Grid layout improvements */
+.performances {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 480px) {
+    .performances {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .intro-video {
+        height: 180px;
+    }
+}
+
