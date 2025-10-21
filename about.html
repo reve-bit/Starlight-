@@ -4,8 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Starlight+ | About Us</title>
+  <meta name="description" content="Learn about Starlight+ mission, vision, team stars, and our vibrant community. Connecting talent and fans in one cosmic universe.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
+  
+  <!-- Favicon and App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="Images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="Images/android-chrome-512x512.png">
+  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css">
 </head>
@@ -50,19 +60,38 @@
       <h2 class="section-title">Our Mission & Vision</h2>
       <div class="card-grid">
         <div class="card">
-          <img src="Images/Miss.jpg" alt="Our Mission">
+          <figure>
+            <img src="Images/Miss.jpg" alt="Our Mission">
+            <figcaption>Our mission to connect talent and fans</figcaption>
+          </figure>
           <h3 class="card-title">Mission</h3>
           <p>To connect talent and fans through an interactive, inclusive, and vibrant digital stage.</p>
         </div>
         <div class="card">
-          <img src="Images/Vis.jpg" alt="Our Vision">
+          <figure>
+            <img src="Images/Vis.jpg" alt="Our Vision">
+            <figcaption>Our vision for immersive entertainment</figcaption>
+          </figure>
           <h3 class="card-title">Vision</h3>
           <p>To create a universe where entertainment becomes immersive and fandom becomes interactive.</p>
         </div>
       </div>
     </section>
-
-
+    <!-- Video Showcase Section -->
+    <div class="video-container">
+      <video class="intro-video" autoplay muted loop playsinline preload="auto" poster="Images/Stages.jpg" controls>
+        <source src="Media/Soc.mp4" type="video/mp4">
+        <source src="Media/intro.webm" type="video/webm">
+        <track src="Media/captions.vtt" kind="subtitles" srclang="en" label="English" default>
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <h3 class="card-title">Meet the Constellation</h3>
+        <p>The Constellation, The Council of Stars, led by its visionary founder Justine Lee, serves as one of the luminous pillars of this site's universe. Composed of brilliant minds — computer scientists, web developers, and multimedia innovators — all hailing from the prestigious School of Computing, they form a constellation of talent and imagination. Together, they illuminate the digital cosmos, weaving creativity and technology into the heart of Starlight+, where every idea shines with purpose.</p>
+      </div>
+    </div>
     <!-- Meet the Stars -->
     <section class="section">
       <h2 class="section-title">Meet the Stars</h2>
@@ -71,17 +100,26 @@
       </p>
       <div class="card-grid">
         <div class="card">
-          <img src="Images/Lunaa.jpg" alt="Star 1">
+          <figure>
+            <img src="Images/Lunaa.jpg" alt="Luna - Vocal powerhouse and fan favorite">
+            <figcaption>Luna - Vocal powerhouse</figcaption>
+          </figure>
           <h3 class="card-title">Luna</h3>
           <p>Vocal powerhouse and fan favorite.</p>
         </div>
         <div class="card">
-          <img src="Images/Ori.jpg" alt="Star 2">
+          <figure>
+            <img src="Images/Ori.jpg" alt="Orion - Dancer with mesmerizing stage presence">
+            <figcaption>Orion - Mesmerizing dancer</figcaption>
+          </figure>
           <h3 class="card-title">Orion</h3>
           <p>Dancer with mesmerizing stage presence.</p>
         </div>
         <div class="card">
-          <img src="Images/Auro.jpg" alt="Star 3">
+          <figure>
+            <img src="Images/Auro.jpg" alt="Aureve - Creative content creator and cover specialist">
+            <figcaption>Aureve - Creative content creator</figcaption>
+          </figure>
           <h3 class="card-title">Aureve</h3>
           <p>Creative content creator and cover specialist.</p>
         </div>
