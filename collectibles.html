@@ -4,33 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital Collectibles | Starlight+</title>
+  <meta name="description" content="Own exclusive digital collectibles from your favorite artists. Limited edition blockchain-verified assets with exclusive content and perks.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
+  
+  <!-- Favicon and App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="192x192" href="Images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="Images/android-chrome-512x512.png">
+  
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="CSS/styles.css" />
 </head>
 <body>
-  <!-- Background Music Player -->
-  <div id="music-player" class="music-player">
-    <audio id="background-music" loop preload="auto">
-      <source src="Media/aespa 에스파 'Drama' (Official Instrumental).mp3" type="audio/mpeg">
-      <source src="Media/background-music.ogg" type="audio/ogg">
-      Your browser does not support the audio element.
-    </audio>
-    
-    <div class="music-controls">
-      <button id="sound-toggle-btn" class="sound-toggle-btn" aria-label="Toggle sound">
-        <span class="sound-on-text">Sound ON</span>
-        <span class="sound-off-text">Sound OFF</span>
-      </button>
-      
-      <div class="volume-control">
-        <span class="volume-label">Volume:</span>
-        <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.1" value="0.5">
-      </div>
-    </div>
-  </div>
-
   <!-- Header -->
   <header>
     <div class="logo">
@@ -202,7 +191,10 @@
       <div class="showcase-grid">
         <div class="showcase-item">
           <div class="showcase-preview">
-            <div class="preview-image">🎵</div>
+            <figure>
+              <div class="preview-image">🎵</div>
+              <figcaption>Golden Audio Moments - Limited edition audio clips</figcaption>
+            </figure>
             <div class="preview-badge">Ultra Rare</div>
           </div>
           <div class="showcase-content">
@@ -217,7 +209,10 @@
         
         <div class="showcase-item">
           <div class="showcase-preview">
-            <div class="preview-image">🎬</div>
+            <figure>
+              <div class="preview-image">🎬</div>
+              <figcaption>Behind the Scenes - Exclusive footage</figcaption>
+            </figure>
             <div class="preview-badge">Exclusive</div>
           </div>
           <div class="showcase-content">
@@ -232,7 +227,10 @@
         
         <div class="showcase-item">
           <div class="showcase-preview">
-            <div class="preview-image">🌟</div>
+            <figure>
+              <div class="preview-image">🌟</div>
+              <figcaption>Cosmic Fan Pass - Special membership token</figcaption>
+            </figure>
             <div class="preview-badge">Founder</div>
           </div>
           <div class="showcase-content">
@@ -247,7 +245,10 @@
         
         <div class="showcase-item">
           <div class="showcase-preview">
-            <div class="preview-image">🎨</div>
+            <figure>
+              <div class="preview-image">🎨</div>
+              <figcaption>Artist Collaborations - Digital artwork</figcaption>
+            </figure>
             <div class="preview-badge">Limited</div>
           </div>
           <div class="showcase-content">
