@@ -1,7 +1,3 @@
-Got it! Here’s your **complete `README.md`** for **Starlight+**, following the exact GitHub README template structure you provided — clean, professional, and ready to upload:
-
----
-
 # Project Title
 
 **Starlight+**
@@ -60,7 +56,3 @@ Course: 6INTROWEB
   * Maxine
   * Francoise 
   * Graciella 
-
----
-
-Would you like me to **add Markdown formatting for your Figma mockup links** (mobile, tablet, and desktop) under the “Getting Started” or “Acknowledgments” section too?
