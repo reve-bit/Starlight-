@@ -1,6 +1,5 @@
-# Project Title
+# **Starlight+**
 
-**Starlight+**
 One Universe, Infinite Starlights.
 
 ## Description
