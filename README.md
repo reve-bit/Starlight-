@@ -49,9 +49,10 @@ Course: 6INTROWEB
 * Fonts: Orbitron and Poppins (Google Fonts)
 * Contributors:
 
-  * Justine
-  * Abygale 
-  * Sophia 
-  * Maxine
-  * Francoise 
-  * Graciella 
+  * Justine Lansangan
+  * Abygale Santos
+  * Sophia Ong
+  * Maxine Quiambao
+  * Francoise Gurango
+  * Graciella Jimenez
+  * Justin Garcia 
